@@ -5,10 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Twitter Feed</title>
 </head>
 <body>
-    
+    <nav class="main-nav">
+        <img src="/assets/twitter-logo.svg" alt="logo twitter" class="logo">
+        <ul class="nav-list">
+        </ul>
+        <button class="btn-blue">Tweet</button>
+    </nav>
+    <main>
+        <section  class="row">
+            <h1>Home</h1>
+            <img src="/assets/icon-top-tweets.svg" alt="top tweets icon">
+        </section>
+    </main>
+    <aside>
+        <input type="text" value="" placeholder="Search Twitter">
+        <section class="trends-container">
+            <header class="row">
+                <h2>Trends for you</h2>
+                <img src="/assets/icon-settings.svg" alt="settings icon" class="blue-icon">
+            </header>
+            <main>
+                <!-- Trending Topics List created with JS -->
+            </main>
+        </section>
+
+    </aside>
+
+    <script src="data.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
