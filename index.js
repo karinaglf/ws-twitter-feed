@@ -17,11 +17,31 @@ trendingTopics.forEach((item, i) => {
 	const trendsCard = document.createElement('div');
 	trendsCard.className = 'trends-card';
 	trendsCard.innerHTML = `
-    <span>${i+1}. Trending</span>
+    <span>${i + 1}. Trending</span>
     <img src="./assets/icon-chevron.svg" alt="more details icon">
     <h3>${item.topic}</h3>
     <p><span>${item.quantity}<span> Tweets</p>
     `;
 
 	trendingSection.appendChild(trendsCard);
+});
+
+// Create Who to Follow Section
+
+const followContainer = document.querySelector('.follow-container main');
+console.log(followContainer);
+
+followSuggestions.forEach((item, i) => {
+	const followCard = document.createElement('div');
+	followCard.className = 'follow-card';
+	followCard.innerHTML = `
+    <img src=${item.avatar} alt="avatar">
+    <div>
+    <span>${item.username}</span> <img src="./assets/icon-verified.svg" alt="verified icon">
+    <p>${item.handle}</p>
+    </div>
+    <button>Follow</button>
+    `;
+
+	followContainer.appendChild(followCard);
 });

@@ -51,6 +51,26 @@ ul {
 }
 
 /* Trending Topics */
+.trends-container {
+    background-color: var(--lightgrey);
+    margin-top: 2rem;
+}
 .trends-card {
     padding: 1rem;
+}
+/* Who to Follow */
+.follow-container {
+    background-color: var(--lightgrey);
+    margin-top: 2rem;
+}
+.follow-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid lightgray;
+}
+.follow-card div {
+    margin-right: auto;
 }

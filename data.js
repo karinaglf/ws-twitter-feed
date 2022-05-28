@@ -33,7 +33,7 @@ const trendingTopics = [
 ];
 
 const followSuggestions = [
-	{ avatar: './assets/icon-profile.svg', username: 'McFly', handle: '@levrainmcfly', verified: yes },
-	{ avatar: './assets/icon-profile.svg', username: 'JohnDoe', handle: '@johndoe', verified: yes },
-    { avatar: './assets/icon-profile.svg', username: 'JanisJoplin', handle: '@realjanice', verified: yes },
+	{ avatar: './assets/icon-profile.svg', username: 'McFly', handle: '@levrainmcfly', verified: true },
+	{ avatar: './assets/icon-profile.svg', username: 'JohnDoe', handle: '@johndoe', verified: true },
+    { avatar: './assets/icon-profile.svg', username: 'JanisJoplin', handle: '@realjanice', verified: true },
 ];
