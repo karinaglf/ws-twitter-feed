@@ -1,76 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --blue: #1DA1F2;
-    --white: #ffffff;
-    --darkgrey: #333333;
-    --lightgrey: #F6F8FA;
-    --filterBlue: invert(57%) sepia(68%) saturate(3736%) hue-rotate(177deg) brightness(101%) contrast(90%);
-  }
+	--blue: #1da1f2;
+	--white: #ffffff;
+	--darkgrey: #333333;
+	--lightgrey: #f6f8fa;
+	--filterBlue: invert(57%) sepia(68%) saturate(3736%) hue-rotate(177deg) brightness(101%) contrast(90%);
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    color: var(--darkgrey)
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	color: var(--darkgrey);
 }
 body {
-    margin: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 3fr 2fr;
-    gap: 1rem;
+    padding-inline: 3rem;
+	padding-top: 5rem;
+	display: grid;
+	grid-template-columns: 285px 694px 387px;
+}
+.fixed {
+	background: rgba(255, 255, 255, 0.95);
+	padding-top: 1rem;
+	min-height: 4rem;
+	position: fixed;
+	top: 0;
+}
+.home-row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	width: calc(694px - 4rem);
 }
 ul {
-    list-style: none;
+	list-style: none;
 }
-
+h1 {
+	font-size: 1.25rem;
+}
+p {
+	font-size: 1rem;
+}
 .row {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 }
-
 .btn-blue {
-    border: none;
-    color: #fff;
-    background: var(--blue);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
-    border-radius: 100px;
-    padding: 1rem 3rem;
-    font-size: 1rem;
-    font-weight: 700;
+	border: none;
+	color: #fff;
+	background: var(--blue);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+	border-radius: 100px;
+	padding: 1rem 3rem;
+	font-size: 1rem;
+	font-weight: 700;
 }
 
-
-
-
-/* Navigation */
+/* ---- Nav Column ---- */
+header {
+	padding-right: 1rem;
+}
+.nav-list {
+	margin-top: 3rem;
+}
+.nav-list li {
+	margin-bottom: 1.75rem;
+}
+.nav-list a {
+	display: flex;
+	align-items: center;
+	font-size: 1.1rem;
+}
+.nav-list img {
+	margin-right: 1rem;
+	width: 26px;
+}
 .nav-list li:hover {
-    filter: var(--filterBlue);
+	filter: var(--filterBlue);
 }
 
-/* Trending Topics */
-.trends-container {
-    background-color: var(--lightgrey);
-    margin-top: 2rem;
+/* ---- Main Column ---- */
+.main-container {
+	padding-inline: 2rem;
+	box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.08), inset 1px 0px 0px rgba(0, 0, 0, 0.08);
 }
-.trends-card {
+
+/* Twitter Feed */
+.main-container a {
+	color: var(--blue);
+	text-decoration: none;
+}
+.main-container a:hover {
+	text-decoration: underline;
+}
+
+/* Twitter Cards */
+.tweet-card {
+}
+.avatar {
+	border-radius: 50%;
+}
+.tweet-image {
+	max-width: 100%;
+	border-radius: 12px;
+}
+
+/* ---- Aside Column ---- */
+aside {
+	padding-inline: 2rem;
+}
+
+/* Search Bar */
+.search-bar {
+	position: relative;
+}
+.search-bar input {
+	background-color: var(--lightgrey);
+	border: none;
+	border-radius: 100px;
+	height: 48px;
+	width: 280px;
+	padding: 0 3rem;
+}
+.search-bar img {
+	position: absolute;
+	top: 15px;
+	left: 16px;
+}
+
+.trends-container, .follow-container  {
+	background-color: var(--lightgrey);
+	margin-top: 2rem;
+    width: 280px;
     padding: 1rem;
+    border-radius: 12px;
 }
-/* Who to Follow */
-.follow-container {
-    background-color: var(--lightgrey);
-    margin-top: 2rem;
+
+.trends-card {
+	padding: 1rem;
 }
+
 .follow-card {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    border-bottom: 1px solid lightgray;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	border-bottom: 1px solid lightgray;
 }
 .follow-card div {
-    margin-right: auto;
+	margin-right: auto;
 }

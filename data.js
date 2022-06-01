@@ -9,31 +9,9 @@ const navItems = [
 	{ label: 'More', icon: './assets/icon-more.svg' },
 ];
 
-const trendingTopics = [
-	{
-		topic: 'JessieMueller',
-		quantity: 456,
-	},
-	{
-		topic: 'ThelmaJones',
-		quantity: 456,
-	},
-	{
-		topic: 'LoisPearson',
-		quantity: 456,
-	},
-	{
-		topic: 'WilmaBoyd',
-		quantity: 456,
-	},
-	{
-		topic: 'ErikaBaker',
-		quantity: 456,
-	},
-];
-
 const followSuggestions = [
 	{ avatar: './assets/icon-profile.svg', username: 'McFly', handle: '@levrainmcfly', verified: true },
 	{ avatar: './assets/icon-profile.svg', username: 'JohnDoe', handle: '@johndoe', verified: true },
-    { avatar: './assets/icon-profile.svg', username: 'JanisJoplin', handle: '@realjanice', verified: true },
+	{ avatar: './assets/icon-profile.svg', username: 'JanisJoplin', handle: '@realjanice', verified: true },
 ];
+
