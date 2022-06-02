@@ -20,10 +20,10 @@ body {
 	margin: 0 auto;
 	padding-inline: 5rem;
 	display: grid;
-	grid-template-columns: 250px 694px 300px;
+	grid-template-columns: 220px 694px 300px;
 }
 .fixed {
-	background: rgba(255, 255, 255, 0.95);
+	background: rgba(255, 255, 255, 0.99);
 	padding-top: 1rem;
 	min-height: 4rem;
 	position: fixed;
@@ -40,11 +40,12 @@ body {
 ul {
 	list-style: none;
 }
-h1, h2 {
+h1,
+h2 {
 	font-size: 1.25rem;
 }
 h3 {
-    font-size: 1.1rem;
+	font-size: 1rem;
 }
 p {
 	font-size: 1rem;
@@ -59,6 +60,7 @@ p {
 	padding: 1rem 3rem;
 	font-size: 1rem;
 	font-weight: 700;
+	margin-top: 1rem;
 }
 .btn-blue-sm {
 	border: none;
@@ -69,32 +71,41 @@ p {
 	padding: 12px 28px;
 	opacity: 0.4;
 }
+.chevron {
+	width: 16px;
+}
 
 /* ---- Nav Column ---- */
-header {
-	padding-right: 1rem;
+
+.logo-container {
+	width: fit-content;
+	margin-left: 0.2rem;
+	padding: 0.8rem;
+	border-radius: 50%;
 }
-.nav-list {
-	margin-top: 3rem;
+.logo-container:hover {
+	background-color: rgba(29, 160, 242, 0.2);
 }
 .nav-list li {
-	margin-bottom: 1.75rem;
+	padding: 1rem 1rem;
+	margin-bottom: 0.5rem;
+	border-radius: 100px;
+	width: fit-content;
 }
 .nav-list a {
 	display: flex;
 	align-items: center;
 	font-size: 1.1rem;
 }
+.nav-list a:first-child {
+	font-weight: 2rem;
+}
 .nav-list img {
 	margin-right: 1rem;
 	width: 26px;
 }
-.nav-list a:hover {
-	filter: var(--filterBlue);
-}
-.nav-list .nav-profile a:hover {
-	filter: none;
-	color: var(--blue);
+.nav-list li:hover {
+	background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* ---- Main Column ---- */
@@ -107,6 +118,7 @@ header {
 .add-tweet {
 	padding-inline: 2rem;
 	height: 142px;
+	border-bottom: 10px solid var(--lightgrey);
 }
 .add-tweet div,
 input {
@@ -147,7 +159,7 @@ input {
 
 /* Twitter Cards */
 .tweets-container {
-	padding-inline: 2rem;
+	padding: 2rem;
 }
 .tweet-card {
 	margin-bottom: 2rem;
@@ -189,7 +201,7 @@ input {
 
 /* ---- Aside Column ---- */
 aside {
-	padding: 5rem 2rem;
+	padding: 3rem 2rem;
 }
 
 /* Search Bar */
@@ -203,6 +215,9 @@ aside {
 	height: 48px;
 	width: 280px;
 	padding: 0 3rem;
+}
+.search-bar input:focus {
+	outline: var(--blue);
 }
 .search-bar img {
 	position: absolute;
@@ -222,42 +237,57 @@ aside {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-    padding: 1rem;
+	padding: 1rem;
 }
 .trends-container footer,
 .follow-container footer {
-    padding: 1rem;
+	padding: 0.8rem 1rem;
 	text-align: center;
-    color: var(--blue);
+	color: var(--blue);
 }
 .trends-card {
 	padding: 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
-.trends-card div{
-    display: flex;
+.trends-card div {
+	display: flex;
 }
 .trends-card span {
 	color: var(--grey);
-    margin-right: auto;
+	margin-right: auto;
+	font-size: 12px;
+	margin-bottom: 5px;
 }
-
+.trends-card > p {
+	color: var(--grey);
+	font-size: 14px;
+}
 .follow-card {
-    padding: 1rem;
+	padding: 1rem;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
-	gap: 5px;
+	gap: 6px;
 	border-bottom: 1px solid lightgray;
 }
-.follow-card div {
+.follow-card span {
+	color: var(--grey);
+	font-size: 14px;
+}
+.follow-card  div {
 	margin-right: auto;
 }
+.follow-card .row {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+}
+
 .outline-button {
-    border: 1px solid var(--blue);
-    color: var(--blue);
-    background: none;
-    padding: 6px 16px;
-    border-radius: 60px;
+	border: 1px solid var(--blue);
+	color: var(--blue);
+	background: none;
+	padding: 6px 16px;
+	border-radius: 60px;
 }

@@ -5,9 +5,6 @@ const navList = document.querySelector('.nav-list');
 navItems.forEach((item) => {
 	const liItem = document.createElement('li');
 	liItem.innerHTML = `<a><img src=${item.icon} alt="nav icon">${item.label}</a>`;
-	if (item.label == 'Profile') {
-		liItem.className = 'nav-profile';
-	}
 
 	navList.appendChild(liItem);
 });
@@ -16,16 +13,18 @@ navItems.forEach((item) => {
 
 const trendingSection = document.querySelector('.trends-container main');
 
-trendsData.slice(0, 5).forEach((item, i) => {
+const sortedTrends = trendsData.sort((a, b) => a.number.slice(0, -1) - b.number.slice(0, -1)).reverse();
+
+sortedTrends.slice(0, 5).forEach((item, i) => {
 	const trendsCard = document.createElement('div');
 	trendsCard.className = 'trends-card';
 	trendsCard.innerHTML = `
 		<div>
 		<span>${i + 1}. Trending</span>
-		<img src="./assets/icon-chevron.svg" alt="chevron icon">
+		<img src="./assets/icon-chevron.svg" alt="chevron icon" class="chevron">
 		</div>
-		<h3>${item.trends}</h3>
-		<p><span>${item.number}<span> Tweets</p>
+		<h3>#${item.trends}</h3>
+		<p>${item.number} Tweets</p>
 		`;
 
 	trendingSection.appendChild(trendsCard);
@@ -35,17 +34,28 @@ trendsData.slice(0, 5).forEach((item, i) => {
 
 const followContainer = document.querySelector('.follow-container main');
 
-followSuggestions.forEach((item, i) => {
+tweetsData.slice(0, 3).forEach((item, i) => {
 	const followCard = document.createElement('div');
 	followCard.className = 'follow-card';
-	followCard.innerHTML = `
-    <img src=${item.avatar} alt="avatar">
+
+	item.verified
+		? (followCard.innerHTML = `
+    <img src=${item.avatar} alt="avatar" class="avatar">
     <div>
-    <h3>${item.username}</h3>
-    <p>${item.handle}</p>
+    <div class="row"><h3>${item.name}</h3> 
+	<img src="./assets/icon-verified.svg" alt="verified icon">
+	</div>
+    <span>@${item.username}</span>
+    </div>
+    <button class="outline-button">Follow</button>`)
+		: (followCard.innerHTML = `
+    <img src=${item.avatar} alt="avatar" class="avatar">
+    <div>
+    <h3>${item.name}</h3>
+    <span>@${item.username}</span>
     </div>
     <button class="outline-button">Follow</button>
-    `;
+    `);
 
 	followContainer.appendChild(followCard);
 });
@@ -64,12 +74,14 @@ tweetsData.forEach((user) => {
 	});
 });
 
-tweets.forEach((item) => {
-	const tweetCard = document.createElement('div');
-	tweetCard.className = 'tweet-card tweet-row';
+tweets
+	.sort(() => Math.random() - 0.5)
+	.forEach((item) => {
+		const tweetCard = document.createElement('div');
+		tweetCard.className = 'tweet-card tweet-row';
 
-	item.img
-		? (tweetCard.innerHTML = `
+		item.img
+			? (tweetCard.innerHTML = `
 	<img src=${item.avatar} alt="avatar" class="avatar">
 	<div class="tweet-details">
 	<div class="tweet-details-header">
@@ -87,7 +99,7 @@ tweets.forEach((item) => {
 	</div>
 	</div>
 	`)
-		: (tweetCard.innerHTML = `
+			: (tweetCard.innerHTML = `
 		<img src=${item.avatar} alt="avatar" class="avatar">
 		<div class="tweet-details">
 		<div class="tweet-details-header">
@@ -105,19 +117,33 @@ tweets.forEach((item) => {
 		</div>
 	`);
 
-	tweetsContainer.appendChild(tweetCard);
-});
+		tweetsContainer.appendChild(tweetCard);
+	});
 
 function formatTweet(text) {
 	const newText = text
+		//Format hyperlinks
+		.replace(/(?:(https?\:\/\/[^\s]+))/m, '<a href="$1">$1</a>')
+
 		//Format hashtags
-		.replace(/#(\w+)/g, '<a href="/tag/$1">#$1</a>')
+		.replace(/#(\w+)/g, '<a href="https://twitter.com/hashtag/$1">#$1</a>')
 
 		//Format @
-		.replace(/@(\w+)/g, '<a href="/tag/$1">@$1</a>')
-
-		//Format hyperlinks
-		.replace(/(?:(https?\:\/\/[^\s]+))/m, '<a href="$1">$1</a>');
+		.replace(/@(\w+)/g, '<a href="https://twitter.com/$1">@$1</a>');
 
 	return newText;
 }
+
+// Show alert after adding a Tweet
+
+const tweetBtn = document.querySelector('#tweet-btn');
+
+tweetBtn.addEventListener('click', (e) => {
+	// Selecting the input element and get its value
+	const tweetMsg = document.querySelector('#tweet-input').value;
+
+	if (!tweetMsg) return;
+
+	// Displaying the value
+	alert(`------ Your tweet:  -----\n\n${tweetMsg}`);
+});

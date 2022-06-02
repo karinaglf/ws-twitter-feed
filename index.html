@@ -10,10 +10,13 @@
 	<body>
 		<header>
 			<div class="fixed">
-				<img src="/assets/twitter-logo.svg" alt="logo twitter" class="logo" />
+				<div class="logo-container">
+					<img src="/assets/twitter-logo.svg" alt="logo twitter" class="logo" />
+				</div>
 
 				<nav class="main-nav">
 					<ul class="nav-list"></ul>
+					<!-- Nav List created with JS -->
 					<button class="btn-blue-lg">Tweet</button>
 				</nav>
 			</div>
@@ -25,9 +28,9 @@
 			</div>
 			<div class="main-content">
 				<section class="add-tweet tweet-row">
-					<img src="/assets/icon-profile.svg" alt="user avatar" class="avatar"/>
+					<img src="/assets/icon-profile.svg" alt="user avatar" class="avatar" />
 					<div>
-						<input type="text" placeholder="What's happening" />
+						<input type="text" placeholder="What's happening" id="tweet-input" value="" />
 						<div class="icons-row">
 							<img src="/assets/icon-image.svg" alt="image icon" />
 							<img src="/assets/icon-gif.svg" alt="gif icon" />
@@ -35,7 +38,7 @@
 							<img src="/assets/icon-emoji.svg" alt="emoji icon" />
 							<img src="/assets/icon-schedule.svg" alt="schedule icon" />
 							<img src="/assets/icon-location.svg" alt="pin icon" />
-							<button class="btn-blue-sm">Tweet</button>
+							<button class="btn-blue-sm" id="tweet-btn">Tweet</button>
 						</div>
 					</div>
 				</section>
@@ -46,10 +49,10 @@
 		</main>
 		<aside>
 			<div class="fixed">
-				<div class="search-bar">
+				<section class="search-bar">
 					<input type="text" value="" placeholder="Search Twitter" />
 					<img src="assets/icon-search.svg" alt="search icon" />
-				</div>
+				</section>
 			</div>
 			<section class="trends-container">
 				<header>

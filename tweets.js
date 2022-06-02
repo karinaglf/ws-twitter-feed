@@ -4,6 +4,7 @@ const tweetsData = [
 		name: 'Bill Gates',
 		username: 'BillGates',
 		avatar: 'https://pbs.twimg.com/profile_images/1414439092373254147/JdS8yLGI_normal.jpg',
+		verified: true,
 		tweets: [
 			{
 				userid: '50393960',
