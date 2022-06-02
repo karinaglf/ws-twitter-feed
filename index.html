@@ -14,7 +14,7 @@
 
 				<nav class="main-nav">
 					<ul class="nav-list"></ul>
-					<button class="btn-blue">Tweet</button>
+					<button class="btn-blue-lg">Tweet</button>
 				</nav>
 			</div>
 		</header>
@@ -23,22 +23,26 @@
 				<h1>Home</h1>
 				<img src="/assets/icon-top-tweets.svg" alt="top tweets icon" />
 			</div>
-			<section class="add-tweet">
-				<img src="/assets/icon-profile.svg" alt="user avatar" />
-				<input type="text" placeholder="What's happening" />
-				<div class="icons-row">
-					<img src="/assets/icon-image.svg" alt="image icon" />
-					<img src="/assets/icon-gif.svg" alt="gif icon" />
-					<img src="/assets/icon-graph.svg" alt="graph icon" />
-					<img src="/assets/icon-emoji.svg" alt="emoji icon" />
-					<img src="/assets/icon-schedule.svg" alt="schedule icon" />
-					<img src="/assets/icon-location.svg" alt="pin icon" />
-				</div>
-			</section>
-
-			<section class="tweets-container">
-				<!-- Tweets feed created with JS -->
-			</section>
+			<div class="main-content">
+				<section class="add-tweet tweet-row">
+					<img src="/assets/icon-profile.svg" alt="user avatar" class="avatar"/>
+					<div>
+						<input type="text" placeholder="What's happening" />
+						<div class="icons-row">
+							<img src="/assets/icon-image.svg" alt="image icon" />
+							<img src="/assets/icon-gif.svg" alt="gif icon" />
+							<img src="/assets/icon-graph.svg" alt="graph icon" />
+							<img src="/assets/icon-emoji.svg" alt="emoji icon" />
+							<img src="/assets/icon-schedule.svg" alt="schedule icon" />
+							<img src="/assets/icon-location.svg" alt="pin icon" />
+							<button class="btn-blue-sm">Tweet</button>
+						</div>
+					</div>
+				</section>
+				<section class="tweets-container">
+					<!-- Tweets feed created with JS -->
+				</section>
+			</div>
 		</main>
 		<aside>
 			<div class="fixed">
@@ -48,7 +52,7 @@
 				</div>
 			</div>
 			<section class="trends-container">
-				<header class="row">
+				<header>
 					<h2>Trends for you</h2>
 					<img src="/assets/icon-settings.svg" alt="settings icon" class="blue-icon" />
 				</header>
@@ -59,7 +63,7 @@
 			</section>
 
 			<section class="follow-container">
-				<header class="row">
+				<header>
 					<h2>Who to follow</h2>
 				</header>
 				<main>

@@ -9,20 +9,24 @@ const tweetsData = [
 				userid: '50393960',
 				tweet:
 					"@mansukhmandviya It was great to meet Dr @mansukhmandviya and exchange perspectives on global health. India's success with the vaccination drive and the use of technology to drive health outcomes at scale offers many lessons for the world.",
+				img: 'https://pbs.twimg.com/media/FTdyQ0PVsAAryAj.jpg',
 			},
 			{
 				userid: '50393960',
 				tweet:
 					'Happy to meet Prime Minister @sanchezcastejon and members of his government today in Madrid. Great to see his leadership and commitment to addressing some of the most pressing global challenges, particularly more equity in global health, climate change and food security. https://t.co/gCUdvKr4jj',
+				img: 'https://pbs.twimg.com/media/FTdyQ0PVsAAryAj.jpg',
 			},
 			{
 				userid: '50393960',
 				tweet:
 					'The school shooting in Texas is heartbreaking. No parent should worry that their child isn\u2019t safe at school. We must come together and act now so this never happens again.',
+				img: 'https://pbs.twimg.com/media/FTdyQ0PVsAAryAj.jpg',
 			},
 			{
 				userid: '50393960',
 				tweet: 'Not long ago, the world increased aid for global health during a time of crisis. We must do so again. https://t.co/zAOZ1tbKcw',
+				img: 'https://pbs.twimg.com/media/FTdyQ0PVsAAryAj.jpg',
 			},
 			{
 				userid: '50393960',

@@ -4,6 +4,7 @@
 	--blue: #1da1f2;
 	--white: #ffffff;
 	--darkgrey: #333333;
+	--grey: #828282;
 	--lightgrey: #f6f8fa;
 	--filterBlue: invert(57%) sepia(68%) saturate(3736%) hue-rotate(177deg) brightness(101%) contrast(90%);
 }
@@ -16,10 +17,10 @@
 	color: var(--darkgrey);
 }
 body {
-    padding-inline: 3rem;
-	padding-top: 5rem;
+	margin: 0 auto;
+	padding-inline: 5rem;
 	display: grid;
-	grid-template-columns: 285px 694px 387px;
+	grid-template-columns: 250px 694px 300px;
 }
 .fixed {
 	background: rgba(255, 255, 255, 0.95);
@@ -32,23 +33,24 @@ body {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	width: calc(694px - 4rem);
+	width: 694px;
+	padding-inline: 2rem;
+	box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.08), inset 1px 0px 0px rgba(0, 0, 0, 0.08);
 }
 ul {
 	list-style: none;
 }
-h1 {
+h1, h2 {
 	font-size: 1.25rem;
+}
+h3 {
+    font-size: 1.1rem;
 }
 p {
 	font-size: 1rem;
+	line-height: 22px;
 }
-.row {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-}
-.btn-blue {
+.btn-blue-lg {
 	border: none;
 	color: #fff;
 	background: var(--blue);
@@ -57,6 +59,15 @@ p {
 	padding: 1rem 3rem;
 	font-size: 1rem;
 	font-weight: 700;
+}
+.btn-blue-sm {
+	border: none;
+	color: #fff;
+	background: var(--blue);
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+	border-radius: 100px;
+	padding: 12px 28px;
+	opacity: 0.4;
 }
 
 /* ---- Nav Column ---- */
@@ -78,14 +89,51 @@ header {
 	margin-right: 1rem;
 	width: 26px;
 }
-.nav-list li:hover {
+.nav-list a:hover {
 	filter: var(--filterBlue);
+}
+.nav-list .nav-profile a:hover {
+	filter: none;
+	color: var(--blue);
 }
 
 /* ---- Main Column ---- */
 .main-container {
-	padding-inline: 2rem;
 	box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.08), inset 1px 0px 0px rgba(0, 0, 0, 0.08);
+}
+.main-content {
+	padding-top: 5rem;
+}
+.add-tweet {
+	padding-inline: 2rem;
+	height: 142px;
+}
+.add-tweet div,
+input {
+	width: 100%;
+}
+.add-tweet input {
+	color: var(--grey);
+	border: none;
+	min-height: 3rem;
+	margin-bottom: 1rem;
+	font-size: 1.1rem;
+}
+.add-tweet input:focus {
+	outline: none;
+}
+.tweet-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+}
+/* Add Twitter */
+.icons-row {
+	display: flex;
+	gap: 1rem;
+}
+.icons-row button {
+	margin-left: auto;
 }
 
 /* Twitter Feed */
@@ -98,10 +146,41 @@ header {
 }
 
 /* Twitter Cards */
+.tweets-container {
+	padding-inline: 2rem;
+}
 .tweet-card {
+	margin-bottom: 2rem;
+}
+.tweet-details {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+}
+.tweet-details-header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 5px;
+}
+.tweet-details-header span {
+	color: var(--grey);
+}
+.tweet-details-header img {
+	margin-left: auto;
+}
+
+.tweet-icons-row {
+	display: flex;
+	justify-content: space-around;
+}
+.tweet-icons-row img {
+	width: 20px;
 }
 .avatar {
 	border-radius: 50%;
+	width: 40px;
+	height: 40px;
 }
 .tweet-image {
 	max-width: 100%;
@@ -110,7 +189,7 @@ header {
 
 /* ---- Aside Column ---- */
 aside {
-	padding-inline: 2rem;
+	padding: 5rem 2rem;
 }
 
 /* Search Bar */
@@ -131,26 +210,54 @@ aside {
 	left: 16px;
 }
 
-.trends-container, .follow-container  {
+.trends-container,
+.follow-container {
 	background-color: var(--lightgrey);
 	margin-top: 2rem;
-    width: 280px;
-    padding: 1rem;
-    border-radius: 12px;
+	width: 280px;
+	border-radius: 12px;
 }
-
+.trends-container header,
+.follow-container header {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+    padding: 1rem;
+}
+.trends-container footer,
+.follow-container footer {
+    padding: 1rem;
+	text-align: center;
+    color: var(--blue);
+}
 .trends-card {
 	padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.trends-card div{
+    display: flex;
+}
+.trends-card span {
+	color: var(--grey);
+    margin-right: auto;
 }
 
 .follow-card {
+    padding: 1rem;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
 	align-items: center;
-	gap: 1rem;
+	gap: 5px;
 	border-bottom: 1px solid lightgray;
 }
 .follow-card div {
 	margin-right: auto;
+}
+.outline-button {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+    background: none;
+    padding: 6px 16px;
+    border-radius: 60px;
 }
