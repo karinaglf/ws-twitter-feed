@@ -8,7 +8,6 @@
 	--lightgrey: #f6f8fa;
 	--filterBlue: invert(57%) sepia(68%) saturate(3736%) hue-rotate(177deg) brightness(101%) contrast(90%);
 }
-
 * {
 	margin: 0;
 	padding: 0;
@@ -20,7 +19,7 @@ body {
 	margin: 0 auto;
 	padding-inline: 5rem;
 	display: grid;
-	grid-template-columns: 220px 694px 300px;
+	grid-template-columns: 250px 700px 380px;
 }
 .fixed {
 	background: rgba(255, 255, 255, 0.99);
@@ -33,7 +32,7 @@ body {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	width: 694px;
+	width: 700px;
 	padding-inline: 2rem;
 	box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.08), inset 1px 0px 0px rgba(0, 0, 0, 0.08);
 }
@@ -195,7 +194,9 @@ input {
 	height: 40px;
 }
 .tweet-image {
-	max-width: 100%;
+	width: 100%;
+	max-height: 600px;
+	object-fit: cover;
 	border-radius: 12px;
 }
 
@@ -275,7 +276,7 @@ aside {
 	color: var(--grey);
 	font-size: 14px;
 }
-.follow-card  div {
+.follow-card div {
 	margin-right: auto;
 }
 .follow-card .row {
